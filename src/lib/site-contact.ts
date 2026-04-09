@@ -36,6 +36,9 @@ export const siteContact = {
   /** Use your GBP “review” link when available; maps place search opens the knowledge panel. */
   googleReviewsUrl:
     "https://www.google.com/maps/search/?api=1&query=Berkshire+Hathaway+HomeServices+Nevada+Properties+9406+W+Lake+Mead+Blvd+Las+Vegas+NV+89134",
+  /** Google My Maps embed — update `mid` when the map is replaced */
+  openHousesMapEmbedSrc:
+    "https://www.google.com/maps/d/u/0/embed?mid=12gQ1w5bzxrQ41HSGCdEJWFfhMtSkBwI&ehbc=2E312F",
 } as const;
 
 export const realScoutDefaults = {

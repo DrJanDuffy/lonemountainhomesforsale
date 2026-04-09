@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { GoogleMapEmbed } from "@/components/sections/google-map-embed";
-import { PhotoGallery } from "@/components/sections/photo-gallery";
+import { OpenHousesMapEmbed } from "@/components/sections/open-houses-map-embed";
 import { JsonLd } from "@/components/seo/json-ld";
 import { homeFaqs } from "@/lib/home-faqs";
 import { galleryImagePaths } from "@/lib/gallery-images";
@@ -59,6 +59,38 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="border-b border-stone-200 bg-stone-50 py-12 sm:py-14">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="text-2xl font-semibold tracking-tight text-stone-900">Open houses</h2>
+          <p className="mt-3 max-w-3xl text-stone-700">
+            Upcoming open houses in and around Lone Mountain and northwest Las Vegas—tap pins for times
+            and details. For a private showing or the latest schedule, call{" "}
+            <a
+              href={`tel:${siteContact.phoneE164}`}
+              className="font-medium text-amber-800 underline decoration-amber-700/30 underline-offset-2 hover:text-amber-700"
+            >
+              {siteContact.phoneDisplay}
+            </a>{" "}
+            or email{" "}
+            <a
+              href={`mailto:${siteContact.email}`}
+              className="font-medium text-amber-800 underline decoration-amber-700/30 underline-offset-2 hover:text-amber-700"
+            >
+              {siteContact.email}
+            </a>
+            .
+          </p>
+          <div className="mt-8">
+            <OpenHousesMapEmbed />
+          </div>
+          <p className="mt-4 text-xs text-stone-500">
+            Map hosted on Google My Maps; dates and homes subject to change—confirm with{" "}
+            {siteContact.businessName} before you go. MLS details may differ; verify material facts with
+            your agent.
+          </p>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <h2 className="text-2xl font-semibold tracking-tight text-stone-900">
           Why buyers watch Lone Mountain
@@ -87,16 +119,19 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="border-y border-stone-200 bg-white py-14">
+      <section className="border-y border-stone-200 bg-white py-12 sm:py-14">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-2xl font-semibold tracking-tight text-stone-900">Area photography</h2>
-          <p className="mt-2 max-w-3xl text-stone-600">
-            A visual sampler of Lone Mountain and northwest Las Vegas context—use it as inspiration, then
-            tour real listings on the search page.
+          <p className="mt-3 max-w-3xl text-stone-700">
+            See a full gallery of Lone Mountain and northwest Las Vegas scenery and neighborhood
+            context—then jump to active listings when you are ready to tour.
           </p>
-          <div className="mt-8">
-            <PhotoGallery />
-          </div>
+          <Link
+            href="/area-photography"
+            className="mt-6 inline-flex items-center justify-center rounded-md bg-amber-700 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-amber-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
+          >
+            View area photos
+          </Link>
         </div>
       </section>
 
