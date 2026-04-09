@@ -1,11 +1,27 @@
+import { siteContact } from "@/lib/site-contact";
+
 type GoogleMapEmbedProps = {
   title: string;
   className?: string;
 };
 
+function mapEmbedSrc(): string {
+  const q = [
+    siteContact.streetAddress,
+    `${siteContact.addressLocality}, ${siteContact.addressRegion} ${siteContact.postalCode}`,
+    siteContact.addressCountry,
+  ].join(", ");
+  const params = new URLSearchParams({
+    q,
+    hl: "en",
+    z: "14",
+    output: "embed",
+  });
+  return `https://maps.google.com/maps?${params.toString()}`;
+}
+
 export function GoogleMapEmbed({ title, className }: GoogleMapEmbedProps) {
-  const src =
-    "https://maps.google.com/maps?q=9406+W+Lake+Mead+Blvd,+Suite+100,+Las+Vegas,+NV+89134&hl=en&z=14&output=embed";
+  const src = mapEmbedSrc();
 
   return (
     <div className={className}>

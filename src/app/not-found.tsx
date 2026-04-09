@@ -1,4 +1,8 @@
 import Link from "next/link";
+import { siteContact } from "@/lib/site-contact";
+
+const linkClass =
+  "font-medium text-amber-800 underline decoration-amber-700/40 underline-offset-2 hover:text-amber-700 hover:decoration-amber-700";
 
 export default function NotFound() {
   return (
@@ -14,6 +18,17 @@ export default function NotFound() {
       >
         Back to home
       </Link>
+      <p className="mt-6 text-sm text-stone-600">
+        <a href={`tel:${siteContact.phoneE164}`} className={linkClass}>
+          {siteContact.phoneDisplay}
+        </a>
+        <span className="mx-2 text-stone-400" aria-hidden>
+          ·
+        </span>
+        <a href={`mailto:${siteContact.email}`} className={linkClass}>
+          {siteContact.email}
+        </a>
+      </p>
     </main>
   );
 }

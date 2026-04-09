@@ -1,6 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
+import { siteContact } from "@/lib/site-contact";
+
+const linkClass =
+  "font-medium text-amber-800 underline decoration-amber-700/40 underline-offset-2 hover:text-amber-700 hover:decoration-amber-700";
 
 export default function Error({
   error,
@@ -20,6 +24,17 @@ export default function Error({
     >
       <h1 className="text-2xl font-semibold text-stone-900">Something went wrong</h1>
       <p className="mt-2 text-stone-600">Please try again. If the problem continues, call or text us.</p>
+      <p className="mt-3 text-sm text-stone-600">
+        <a href={`tel:${siteContact.phoneE164}`} className={linkClass}>
+          {siteContact.phoneDisplay}
+        </a>
+        <span className="mx-2 text-stone-400" aria-hidden>
+          ·
+        </span>
+        <a href={`mailto:${siteContact.email}`} className={linkClass}>
+          {siteContact.email}
+        </a>
+      </p>
       <button
         type="button"
         onClick={reset}

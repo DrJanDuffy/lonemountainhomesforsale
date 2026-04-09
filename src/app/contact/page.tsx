@@ -4,7 +4,7 @@ import { GoogleMapEmbed } from "@/components/sections/google-map-embed";
 import { siteContact } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: "Contact Dr. Jan Duffy | Lone Mountain & Las Vegas",
+  title: `Contact ${siteContact.businessName} | Lone Mountain & Las Vegas`,
   description: `Call ${siteContact.phoneDisplay}, email ${siteContact.email}, or visit ${siteContact.legalBrokerage} on W Lake Mead Blvd. Serving Lone Mountain and northwest Las Vegas.`,
   alternates: { canonical: "/contact" },
 };

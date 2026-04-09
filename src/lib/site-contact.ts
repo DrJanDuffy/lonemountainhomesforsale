@@ -2,6 +2,8 @@
  * Single source of truth for NAP and entity fields.
  * Align visible copy and JSON-LD with Google Business Profile.
  * Phone and office address match Dr. Jan Duffy’s published contact page (heyberkshire.com) as of 2026.
+ * Site email is the branded inbox for this domain.
+ * primaryArea uses ZIP 89129 (Lone Mountain market); postalCode is the office ZIP 89134 (GBP pin).
  */
 export const siteContact = {
   siteName: "Lone Mountain Homes",
@@ -12,7 +14,7 @@ export const siteContact = {
   primaryArea: "Lone Mountain & Northwest Las Vegas, NV 89129",
   phoneDisplay: "(702) 500-1942",
   phoneE164: "+17025001942",
-  email: "homes@heyberkshire.com",
+  email: "ChanceSells@LoneMountainHomesForSale.com",
   streetAddress: "9406 W Lake Mead Blvd, Suite 100",
   addressLocality: "Las Vegas",
   addressRegion: "NV",
