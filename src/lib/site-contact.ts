@@ -36,13 +36,32 @@ export const siteContact = {
   /** Use your GBP “review” link when available; maps place search opens the knowledge panel. */
   googleReviewsUrl:
     "https://www.google.com/maps/search/?api=1&query=Berkshire+Hathaway+HomeServices+Nevada+Properties+9406+W+Lake+Mead+Blvd+Las+Vegas+NV+89134",
-  /** Google My Maps embed — update `mid` when the map is replaced */
+  /**
+   * Google My Maps embed iframe `src` (defaults below).
+   * To update: Google My Maps → Share → Embed → copy the `src` URL, then either paste into
+   * `NEXT_PUBLIC_OPEN_HOUSES_MAP_EMBED_SRC` in Vercel or replace this string (keep `mid` and `ehbc` in sync).
+   * The embedded map cannot show Google’s layer legend open by default; use on-site legend + viewer link.
+   */
   openHousesMapEmbedSrc:
     "https://www.google.com/maps/d/u/0/embed?mid=12gQ1w5bzxrQ41HSGCdEJWFfhMtSkBwI&ehbc=2E312F",
-  /** Full My Maps viewer (opens Google’s UI, including native legend) — keep `mid` in sync with embed */
+  /**
+   * Full My Maps viewer — same `mid` as embed. User sees Google’s native legend UI here.
+   * Update `NEXT_PUBLIC_OPEN_HOUSES_MAP_VIEWER_URL` or this string when `mid` changes.
+   */
   openHousesMapViewerUrl:
     "https://www.google.com/maps/d/u/0/viewer?mid=12gQ1w5bzxrQ41HSGCdEJWFfhMtSkBwI",
 } as const;
+
+/** Prefer env so you can swap My Maps URLs without a code deploy (Vercel env vars). */
+export function getOpenHousesMapEmbedSrc(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_OPEN_HOUSES_MAP_EMBED_SRC?.trim();
+  return fromEnv || siteContact.openHousesMapEmbedSrc;
+}
+
+export function getOpenHousesMapViewerUrl(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_OPEN_HOUSES_MAP_VIEWER_URL?.trim();
+  return fromEnv || siteContact.openHousesMapViewerUrl;
+}
 
 export const realScoutDefaults = {
   /** Override with NEXT_PUBLIC_REALSCOUT_AGENT_ID in production if different */

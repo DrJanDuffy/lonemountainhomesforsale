@@ -1,6 +1,6 @@
 /**
  * On-page legend for the open houses My Map (Google’s embed cannot show legend open by default).
- * Edit titles/descriptions to match your My Map layer names.
+ * Edit titles, descriptions, and accent colors to match your My Map layer list (Share → Open in My Maps).
  */
 export type OpenHousesLegendAccent = "amber" | "stone" | "emerald" | "sky";
 
