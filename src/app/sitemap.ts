@@ -9,6 +9,8 @@ type Entry = {
 
 const entries: Entry[] = [
   { path: "", changeFrequency: "weekly", priority: 1 },
+  { path: "/neighborhoods/lone-mountain", changeFrequency: "monthly", priority: 0.75 },
+  { path: "/open-houses", changeFrequency: "weekly", priority: 0.72 },
   { path: "/area-photography", changeFrequency: "monthly", priority: 0.65 },
   { path: "/contact", changeFrequency: "weekly", priority: 0.7 },
   { path: "/search", changeFrequency: "daily", priority: 0.7 },

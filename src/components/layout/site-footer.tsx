@@ -13,6 +13,43 @@ export function SiteFooter() {
               {siteContact.businessName}, {siteContact.legalBrokerage}
             </p>
             <p className="text-sm text-stone-600">License {siteContact.license}</p>
+            <nav className="mt-4 text-sm" aria-label="Explore Lone Mountain">
+              <p className="font-medium text-stone-900">Explore</p>
+              <ul className="mt-2 space-y-2">
+                <li>
+                  <Link
+                    href="/neighborhoods/lone-mountain"
+                    className="text-amber-900 underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
+                  >
+                    Lone Mountain 89129 guide
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/open-houses"
+                    className="text-amber-900 underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
+                  >
+                    Open houses map
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/search"
+                    className="text-amber-900 underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
+                  >
+                    Homes for sale near Lone Mountain
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/area-photography"
+                    className="text-amber-900 underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
+                  >
+                    Area photography
+                  </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
           <div className="text-sm text-stone-700">
             <p className="font-medium text-stone-900">Office</p>

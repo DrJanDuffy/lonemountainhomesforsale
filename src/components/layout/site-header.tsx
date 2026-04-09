@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 
 const nav = [
   { href: "/", label: "Home" },
+  { href: "/neighborhoods/lone-mountain", label: "Lone Mountain" },
+  { href: "/open-houses", label: "Open houses" },
   { href: "/area-photography", label: "Area photos" },
   { href: "/search", label: "Homes for sale" },
   { href: "/contact", label: "Contact" },

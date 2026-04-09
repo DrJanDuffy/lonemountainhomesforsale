@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { GoogleMapEmbed } from "@/components/sections/google-map-embed";
-import { OpenHousesMapEmbed } from "@/components/sections/open-houses-map-embed";
 import { JsonLd } from "@/components/seo/json-ld";
 import { homeFaqs } from "@/lib/home-faqs";
 import { galleryImagePaths } from "@/lib/gallery-images";
@@ -61,33 +60,29 @@ export default function HomePage() {
 
       <section className="border-b border-stone-200 bg-stone-50 py-12 sm:py-14">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-2xl font-semibold tracking-tight text-stone-900">Open houses</h2>
+          <h2 className="text-2xl font-semibold tracking-tight text-stone-900">
+            Open houses this weekend (89129 &amp; NW Las Vegas)
+          </h2>
           <p className="mt-3 max-w-3xl text-stone-700">
-            Upcoming open houses in and around Lone Mountain and northwest Las Vegas—tap pins for times
-            and details. For a private showing or the latest schedule, call{" "}
+            We keep a live My Map of pins around <strong>Lone Mountain</strong>,{" "}
+            <strong>ZIP 89129</strong>, and the northwest pockets buyers actually drive between—Skye
+            Canyon, Centennial Hills, and the 215 beltway. See the legend, tap for times, then text or
+            call before you head out.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/open-houses"
+              className="inline-flex items-center justify-center rounded-md bg-amber-700 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-amber-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
+            >
+              View open house map
+            </Link>
             <a
               href={`tel:${siteContact.phoneE164}`}
-              className="font-medium text-amber-800 underline decoration-amber-700/30 underline-offset-2 hover:text-amber-700"
+              className="inline-flex items-center justify-center rounded-md border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 shadow-sm hover:bg-stone-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
             >
-              {siteContact.phoneDisplay}
-            </a>{" "}
-            or email{" "}
-            <a
-              href={`mailto:${siteContact.email}`}
-              className="font-medium text-amber-800 underline decoration-amber-700/30 underline-offset-2 hover:text-amber-700"
-            >
-              {siteContact.email}
+              Call {siteContact.phoneDisplay}
             </a>
-            .
-          </p>
-          <div className="mt-8">
-            <OpenHousesMapEmbed />
           </div>
-          <p className="mt-4 text-xs text-stone-500">
-            Map hosted on Google My Maps; dates and homes subject to change—confirm with{" "}
-            {siteContact.businessName} before you go. MLS details may differ; verify material facts with
-            your agent.
-          </p>
         </div>
       </section>
 
@@ -99,7 +94,14 @@ export default function HomePage() {
           Lone Mountain offers a northwest Las Vegas address with open views, established neighborhoods,
           and practical access to the 215 beltway, Centennial Hills, and Skye Canyon corridors. It is a
           strong fit for buyers who want space, newer construction pockets, and a calmer residential
-          rhythm while staying inside the valley.
+          rhythm while staying inside the valley. For block-by-block context inside{" "}
+          <Link
+            href="/neighborhoods/lone-mountain"
+            className="font-medium text-amber-800 underline decoration-amber-700/40 underline-offset-2 hover:text-amber-700"
+          >
+            ZIP 89129 and Lone Mountain proper
+          </Link>
+          , read the neighborhood guide—then tour what is actually on the market this week.
         </p>
         <ul className="mt-6 grid gap-4 sm:grid-cols-2">
           <li className="rounded-lg border border-stone-200 bg-white p-5 shadow-sm">

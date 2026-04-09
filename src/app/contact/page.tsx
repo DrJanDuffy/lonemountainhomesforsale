@@ -5,7 +5,7 @@ import { siteContact } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   title: `Contact ${siteContact.businessName} | Lone Mountain & Las Vegas`,
-  description: `Call ${siteContact.phoneDisplay}, email ${siteContact.email}, or visit ${siteContact.legalBrokerage} on W Lake Mead Blvd. Serving Lone Mountain and northwest Las Vegas.`,
+  description: `Call ${siteContact.phoneDisplay}, email ${siteContact.email}, or visit ${siteContact.legalBrokerage} on W Lake Mead Blvd. Lone Mountain ZIP 89129, Skye Canyon, and northwest Las Vegas real estate.`,
   alternates: { canonical: "/contact" },
 };
 

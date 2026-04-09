@@ -4,8 +4,8 @@ import { PhotoGallery } from "@/components/sections/photo-gallery";
 import { siteContact } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: "Lone Mountain & Northwest Las Vegas Area Photography",
-  description: `Photos of Lone Mountain, Las Vegas 89129, and northwest valley context with ${siteContact.businessName}. Browse the gallery, then search active homes for sale.`,
+  title: "Lone Mountain 89129 & NW Las Vegas Area Photography",
+  description: `On-the-ground photos around Lone Mountain, Las Vegas ZIP 89129, ridge views, and northwest corridors—context before you tour homes with ${siteContact.businessName}.`,
   alternates: { canonical: "/area-photography" },
 };
 

@@ -3,8 +3,8 @@ import { RealScoutOfficeListings } from "@/components/realscout/office-listings"
 import { siteContact } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
-  title: "Homes for Sale | Lone Mountain & Las Vegas MLS Search",
-  description: `Search active listings near Lone Mountain (89129) and the Las Vegas Valley with ${siteContact.businessName}. Tools update from the MLS; confirm details with your agent.`,
+  title: "Homes for Sale | Lone Mountain 89129 & Northwest Las Vegas MLS",
+  description: `MLS search skewed to Lone Mountain, ZIP 89129, Skye Canyon, and Centennial Hills with ${siteContact.businessName}. Live data from third-party search—verify price, HOA, and schools before you offer.`,
   alternates: { canonical: "/search" },
 };
 

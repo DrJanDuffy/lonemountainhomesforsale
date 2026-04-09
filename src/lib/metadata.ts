@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultOgImagePath } from "@/lib/schema";
 import { siteContact } from "@/lib/site-contact";
 
 /**
@@ -7,15 +8,16 @@ import { siteContact } from "@/lib/site-contact";
  */
 export function rootMetadata(): Metadata {
   const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION?.trim();
+  const ogImageUrl = new URL(defaultOgImagePath, siteContact.siteUrl).toString();
 
   return {
     metadataBase: new URL(siteContact.siteUrl),
     robots: { index: true, follow: true },
     title: {
-      default: `${siteContact.siteName} | ${siteContact.primaryArea}`,
+      default: `${siteContact.siteName} | Lone Mountain Las Vegas 89129`,
       template: `%s | ${siteContact.siteName}`,
     },
-    description: `Homes for sale near Lone Mountain, Las Vegas 89129. ${siteContact.businessName}, ${siteContact.legalBrokerage}. Call ${siteContact.phoneDisplay}.`,
+    description: `Lone Mountain & ZIP 89129 real estate: homes for sale, weekend open houses, and northwest Las Vegas guidance with ${siteContact.businessName} (${siteContact.legalBrokerage}). Call ${siteContact.phoneDisplay}.`,
     ...(googleSiteVerification
       ? { verification: { google: googleSiteVerification } }
       : {}),
@@ -24,8 +26,20 @@ export function rootMetadata(): Metadata {
       locale: "en_US",
       url: siteContact.siteUrl,
       siteName: siteContact.siteName,
-      title: `${siteContact.siteName} | ${siteContact.primaryArea}`,
-      description: `Search Lone Mountain and northwest Las Vegas real estate with ${siteContact.businessName}.`,
+      title: `${siteContact.siteName} | Lone Mountain Las Vegas 89129`,
+      description: `Hyperlocal focus on Lone Mountain, the 215 beltway, and Skye Canyon / Centennial Hills access—search homes and open houses in northwest Las Vegas with ${siteContact.businessName}.`,
+      images: [
+        {
+          url: ogImageUrl,
+          alt: "Lone Mountain and northwest Las Vegas neighborhood context",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${siteContact.siteName} | Lone Mountain 89129`,
+      description: `Homes and open houses around Lone Mountain and northwest Las Vegas. ${siteContact.businessName}.`,
+      images: [ogImageUrl],
     },
   };
 }

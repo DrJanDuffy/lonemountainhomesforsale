@@ -39,6 +39,9 @@ export const siteContact = {
   /** Google My Maps embed — update `mid` when the map is replaced */
   openHousesMapEmbedSrc:
     "https://www.google.com/maps/d/u/0/embed?mid=12gQ1w5bzxrQ41HSGCdEJWFfhMtSkBwI&ehbc=2E312F",
+  /** Full My Maps viewer (opens Google’s UI, including native legend) — keep `mid` in sync with embed */
+  openHousesMapViewerUrl:
+    "https://www.google.com/maps/d/u/0/viewer?mid=12gQ1w5bzxrQ41HSGCdEJWFfhMtSkBwI",
 } as const;
 
 export const realScoutDefaults = {
