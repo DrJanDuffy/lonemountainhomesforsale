@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { GoogleMapEmbed } from "@/components/sections/google-map-embed";
+import { OpenHousesMapBlock } from "@/components/sections/open-houses-map-block";
 import { JsonLd } from "@/components/seo/json-ld";
 import { homeFaqs } from "@/lib/home-faqs";
 import { galleryImagePaths } from "@/lib/gallery-images";
@@ -64,24 +65,26 @@ export default function HomePage() {
             Open houses this weekend (89129 &amp; NW Las Vegas)
           </h2>
           <p className="mt-3 max-w-3xl text-stone-700">
-            We keep a live My Map of pins around <strong>Lone Mountain</strong>,{" "}
-            <strong>ZIP 89129</strong>, and the northwest pockets buyers actually drive between—Skye
-            Canyon, Centennial Hills, and the 215 beltway. See the legend, tap for times, then text or
-            call before you head out.
+            Live My Map pins around <strong>Lone Mountain</strong>, <strong>ZIP 89129</strong>, Skye
+            Canyon, Centennial Hills, and the 215 beltway—tap for times, then confirm with{" "}
+            {siteContact.businessName} before you drive.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/open-houses"
-              className="inline-flex items-center justify-center rounded-md bg-amber-700 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-amber-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
-            >
-              View open house map
-            </Link>
             <a
               href={`tel:${siteContact.phoneE164}`}
-              className="inline-flex items-center justify-center rounded-md border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 shadow-sm hover:bg-stone-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
+              className="inline-flex items-center justify-center rounded-md bg-amber-700 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-amber-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
             >
               Call {siteContact.phoneDisplay}
             </a>
+            <Link
+              href="/open-houses"
+              className="inline-flex items-center justify-center rounded-md border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 shadow-sm hover:bg-stone-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
+            >
+              Open houses page (details)
+            </Link>
+          </div>
+          <div className="mt-8">
+            <OpenHousesMapBlock />
           </div>
         </div>
       </section>
